@@ -1,0 +1,19 @@
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+    <style>
+        h1{
+            text-align: center;
+        }
+
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="page_title" id="page_title">
+    <h1> Страница маршрута </h1>
+</div>
+
+    {{ dump(track) }}
+{% endblock %}
+

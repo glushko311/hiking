@@ -1,13 +1,23 @@
 homepage:
   path: /
-  defaults: { _controller: HikingBundle:Blog:teaser }
+  defaults: { _controller: HikingBundle:Hiking:showTracks }
 
-blog_view:
-  path: /blog/{id}
-  defaults: { _controller: HikingBundle:Blog:blogView }
+#blog_view:
+#  path: /blog/{id}
+#  defaults: { _controller: HikingBundle:Blog:blogView }
+#  requirements:
+#    id: \d+
+#
+#blog_teaser:
+#  path: /blog
+#  defaults: { _controller: HikingBundle:Blog:teaser }
+
+all_tracks:
+  path: /tracks
+  defaults: { _controller: HikingBundle:Hiking:showTracks }
+
+single_track:
+  path: /track/{track_id}
+  defaults: { _controller: HikingBundle:Hiking:showSingleTrack }
   requirements:
     id: \d+
-
-blog_teaser:
-  path: /blog
-  defaults: { _controller: HikingBundle:Blog:teaser }

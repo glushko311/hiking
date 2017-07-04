@@ -49,6 +49,11 @@ class Track
      */
     private $track;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $status;
+
 
 
     
@@ -162,4 +167,31 @@ class Track
     {
         return $this->track;
     }
+
+
+    /**
+     * Set days
+     *
+     * @param integer $status
+     *
+     * @return Track
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return boolean
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+
 }

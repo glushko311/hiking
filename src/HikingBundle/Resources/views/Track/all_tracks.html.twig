@@ -1,0 +1,85 @@
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+    <style>
+        h1{
+            text-align: center;
+        }
+        .link-track-item{
+            text-decoration: none;
+            color: #000000;
+        }
+        .track-item-container{
+            display: flex;
+            justify-content: space-around;
+            align-items: stretch;
+            border:1px solid #000000;
+        }
+        .track-item-container .field{
+            width:4vw;
+            border-right: 1px solid #000000;
+            text-decoration: none;
+        }
+        .track-item-container .field:last-child{
+            border-right:0;
+        }
+        .track-item-container .field-track{
+            width:75vw;
+        }
+        .track-item-container .field-date{
+            width:9vw;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="page_title" id="page_title">
+    <h1> Все мои маршруты </h1>
+</div>
+    {% for track in tracks %}
+    <article>
+        <div class="container track-container">
+            {#<a class="link-track-item" href="{{ path('single_track', {'id' : track.track_id}) }}">#}
+                <div class="track-item-container">
+
+                        <div class="field field-date">
+                            <p>{{ track.date|date("d-m-Y") }}</p>
+                        </div>
+
+
+                        <div class="field field-days">
+                            <p>{{ track.days }}</p>
+                        </div>
+
+
+                        <div class="field field-difficult">
+                            <p>{{ track.difficult }}</p>
+                        </div>
+
+
+                        <div class="field field-track">
+                            <p>{{ track.track }}</p>
+                        </div>
+
+
+                    {#<div class="field field-status">#}
+                        {#<p>{{ track.status }}</p>#}
+                    {#</div>#}
+
+                </div>
+            {#</a>#}
+
+        </div>
+
+        {#<nav role="navigation">#}
+            {#<ul>#}
+                {#<li class="read-more">#}
+                    {#<a href="{{ path('track_view', {'id' : track.id}) }}">Читать статью</a>#}
+                {#</li>#}
+            {#</ul>#}
+        {#</nav>#}
+    </article>
+    {% endfor %}
+    {{ dump(tracks) }}
+{% endblock %}
+

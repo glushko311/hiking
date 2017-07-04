@@ -26,6 +26,7 @@ class DefaultArticleData implements FixtureInterface
         $track->setDays(5);
         $track->setDifficult(1);
         $track->setTrack("Синекаменка - Кок Асан - Чигенитра - Демерджи - Алушта");
+        $track->setStatus(1);
 
         $manager->persist($track);
 
@@ -37,6 +38,7 @@ class DefaultArticleData implements FixtureInterface
         $track->setTrack("Быстрица - Чёрна Клыва - г. бол.Братковская - пол.Рипта Апшинецкая - 
                             оз.Апшинец - г.Стог - г.Близница - с.Квасы"
                          );
+        $track->setStatus(1);
 
         $manager->persist($track);
 
@@ -50,6 +52,7 @@ class DefaultArticleData implements FixtureInterface
                             т/с Поляна МАН - Стол Гора - т/с Восточный Суат - т/с Ай 
                             Алексий - т/с Чигенитра - пос. Рыбачье - Симферополь"
                          );
+        $track->setStatus(1);
 
         $manager->persist($track);
 
@@ -58,12 +61,12 @@ class DefaultArticleData implements FixtureInterface
         $track->setDate(new \DateTime());
         $track->setDays(4);
         $track->setDifficult(0);
-        $track->setTrack("Ялта - ур Таракташ - Ай Петри - т/с Беш Текне - ур.Чёртова Лестница - Форос - Балаклава");
+        $track->setTrack("Ялта - ур Таракташ - Ай Петри - т/с Беш Текне - ур.Чёртова Лестница - 
+                        Форос - Балаклава");
+        $track->setStatus(1);
 
         $manager->persist($track);
 
-
-        
         $manager->flush();
 
 
