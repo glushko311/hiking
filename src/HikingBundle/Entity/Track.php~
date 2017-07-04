@@ -1,0 +1,59 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Шалена Жирафа
+ * Date: 04.07.2017
+ * Time: 21:39
+ */
+
+
+
+namespace HikingBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Class Blog
+ * @package HikingBundle\Entity
+ * @ORM\Table(name="t_track")
+ * @ORM\Entity
+ */
+
+
+class Track
+{
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $track_id;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $date;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $days;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $difficult;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $track;
+
+
+
+    
+
+
+
+
+}
