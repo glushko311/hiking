@@ -1,0 +1,3 @@
+
+blog:
+    resource: "@HikingBundle/Resources/config/routing.yml"

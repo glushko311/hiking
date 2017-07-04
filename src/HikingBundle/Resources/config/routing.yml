@@ -1,0 +1,13 @@
+homepage:
+  path: /
+  defaults: { _controller: HikingBundle:Blog:teaser }
+
+blog_view:
+  path: /blog/{id}
+  defaults: { _controller: HikingBundle:Blog:blogView }
+  requirements:
+    id: \d+
+
+blog_teaser:
+  path: /blog
+  defaults: { _controller: HikingBundle:Blog:teaser }
