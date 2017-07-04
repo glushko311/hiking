@@ -8,8 +8,8 @@
 
 namespace HikingBundle\DataFixtures\ORM;
 
+use HikingBundle\Entity\Track;
 
-use HikingBundle\Entity\Blog;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -19,29 +19,51 @@ class DefaultArticleData implements FixtureInterface
 
     public function load(ObjectManager $manager)
     {
-        $blog = new Blog();
-        $blog->setTitle("Мои друзья скоты не любят читать");
-        $blog->setBody("
-             <p>
-             Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, 
-             что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, 
-             он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными 
-             чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.
-             </p> 
-             <p>
-             Его многочисленные, убого тонкие по сравнению с остальным телом ножки беспомощно копошились у
-             него перед глазами. «Что со мной случилось?» – подумал он. Это не было сном.
-             </p>
-             <p>
-             Его комната, настоящая, разве что слишком маленькая, но обычная комната, мирно покоилась в 
-             своих четырех хорошо знакомых стенах. Над столом, где были разложены распакованные образцы сукон 
-             – Замза был коммивояжером, – висел портрет, который он недавно вырезал из иллюстрированного журнала 
-             и вставил в красивую золоченую рамку.
-             </p>");
-        $blog->setSummary("Грегор Замза обнаружил, 
-             что он у себя в постели превратился в страшное насекомое");
+
+        $track = new Track();
+
+        $track->setDate(new \DateTime());
+        $track->setDays(5);
+        $track->setDifficult(1);
+        $track->setTrack("Синекаменка - Кок Асан - Чигенитра - Демерджи - Алушта");
+
+        $manager->persist($track);
+
+        $track = new Track();
+
+        $track->setDate(new \DateTime());
+        $track->setDays(7);
+        $track->setDifficult(2);
+        $track->setTrack("Быстрица - Чёрна Клыва - г. бол.Братковская - пол.Рипта Апшинецкая - 
+                            оз.Апшинец - г.Стог - г.Близница - с.Квасы"
+                         );
+
+        $manager->persist($track);
+
+
+        $track = new Track();
+
+        $track->setDate(new \DateTime());
+        $track->setDays(5);
+        $track->setDifficult(1);
+        $track->setTrack("Симферополь - т/б Ангарский перевал - т/с Поляна МАН - 
+                            т/с Поляна МАН - Стол Гора - т/с Восточный Суат - т/с Ай 
+                            Алексий - т/с Чигенитра - пос. Рыбачье - Симферополь"
+                         );
+
+        $manager->persist($track);
+
+        $track = new Track();
+
+        $track->setDate(new \DateTime());
+        $track->setDays(4);
+        $track->setDifficult(0);
+        $track->setTrack("Ялта - ур Таракташ - Ай Петри - т/с Беш Текне - ур.Чёртова Лестница - Форос - Балаклава");
+
+        $manager->persist($track);
+
+
         
-        $manager->persist($blog);
         $manager->flush();
 
 
