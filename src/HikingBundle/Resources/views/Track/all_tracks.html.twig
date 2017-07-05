@@ -27,6 +27,15 @@
         .track-item-container .field p{
             font-size: 2vw;
         }
+        .track-item-container .field a{
+            font-size: 1.5vw;
+            text-decoration: underline;
+            color:blue;
+            display: block;
+        }
+        .track-item-container .field a:hover{
+            color:#000000;
+        }
         .track-item-container .field:last-child{
             border-right:0;
         }
@@ -59,8 +68,8 @@
     <h1> Мои походы </h1>
 </div>
     <form class="check-form" action="">
-        <p class="is_fin"><input name="is_fin" type="radio" value="true"> Прошедшие</p>
-        <p class="is_fin"><input name="is_fin" type="radio" value="false" checked> Запланированные</p>
+        <p class="is_fin"><input name="is_fin" type="radio" value="true" {{ is_fin.fin }}> Прошедшие</p>
+        <p class="is_fin"><input name="is_fin" type="radio" value="false" {{ is_fin.plan }}> Запланированные</p>
         <p class="submit"><input type="submit" value="Выбрать"></p>
     </form>
     <div class="track-item-container">
@@ -104,32 +113,20 @@
                             <p>{{ track.difficult }}</p>
                         </div>
 
-                    <a class="link-track-item" href="{{ path('single_track', {'track_id' : track.track_id}) }}">
+
                         <div class="field field-track">
-                            <p>{{ track.track }}</p>
+                            <a class="link-track-item" href="{{ path('single_track', {'track_id' : track.track_id}) }}">{{ track.track }}</a>
                         </div>
 
-                    </a>
-
-
-                    {#<div class="field field-status">#}
-                        {#<p>{{ track.status }}</p>#}
-                    {#</div>#}
 
                 </div>
 
 
         </div>
 
-        {#<nav role="navigation">#}
-            {#<ul>#}
-                {#<li class="read-more">#}
-                    {#<a href="{{ path('track_view', {'id' : track.id}) }}">Читать статью</a>#}
-                {#</li>#}
-            {#</ul>#}
-        {#</nav>#}
+
     </article>
     {% endfor %}
-    {{ dump(tracks) }}
+    {{ dump(is_fin) }}
 {% endblock %}
 

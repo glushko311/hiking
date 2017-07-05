@@ -16,13 +16,15 @@ class HikingController extends Controller
     public function showTracksAction(){
         $em = $this->getDoctrine();
         $trackRepository = $em->getRepository("HikingBundle:Track");
-        if(!empty($_GET['is_fin'] && $_GET['is_fin'] == 'false')){
+        $is_fin = ['fin' => 'checked', 'plan' => ''];
+        if(isset($_GET['is_fin']) && !empty($_GET['is_fin'] && $_GET['is_fin'] == 'false')){
             $tracks = $trackRepository->findBy(["status"=>1]);
+            $is_fin = ['fin' => '', 'plan' => 'checked'];
         }else{
             $tracks = $trackRepository->findBy(["status"=>0]);
         }
 
-        return $this->render("HikingBundle:Track:all_tracks.html.twig", ['tracks' => $tracks]);
+        return $this->render("HikingBundle:Track:all_tracks.html.twig", ['tracks' => $tracks, 'is_fin' => $is_fin]);
     }
     public function showSingleTrackAction($track_id){
         $em = $this->getDoctrine();
