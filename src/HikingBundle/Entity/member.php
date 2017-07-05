@@ -15,7 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="t_member")
  * @ORM\Entity
  */
-class member
+class Member
 {
     /**
      * @ORM\Column(type="integer")
@@ -39,4 +39,86 @@ class member
      */
     private $about;
 
+
+    /**
+     * Get memberId
+     *
+     * @return integer
+     */
+    public function getMember_Id()
+    {
+        return $this->member_id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Member
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set lastName
+     *
+     * @param string $lastName
+     *
+     * @return Member
+     */
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * Get lastName
+     *
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    /**
+     * Set about
+     *
+     * @param string $about
+     *
+     * @return Member
+     */
+    public function setAbout($about)
+    {
+        $this->about = $about;
+
+        return $this;
+    }
+
+    /**
+     * Get about
+     *
+     * @return string
+     */
+    public function getAbout()
+    {
+        return $this->about;
+    }
 }

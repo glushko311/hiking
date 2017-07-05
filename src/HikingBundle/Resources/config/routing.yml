@@ -21,3 +21,11 @@ single_track:
   defaults: { _controller: HikingBundle:Hiking:showSingleTrack }
   requirements:
     track_id: \d+
+
+single_member:
+  path: /member/{member_id}
+  defaults: { _controller: HikingBundle:Hiking:showSingleMember }
+  requirements:
+    member_id: \d+
+
+  
