@@ -57,9 +57,6 @@
             align-items:center;
             justify-content: space-around;
         }
-        .check-form .submit{
-            /*display: none;*/
-        }
     </style>
 {% endblock %}
 
@@ -67,10 +64,9 @@
 <div class="page_title" id="page_title">
     <h1> Мои походы </h1>
 </div>
-    <form class="check-form" action="">
-        <p class="is_fin"><input name="is_fin" type="radio" value="true" {{ is_fin.fin }}> Прошедшие</p>
-        <p class="is_fin"><input name="is_fin" type="radio" value="false" {{ is_fin.plan }}> Запланированные</p>
-        <p class="submit"><input type="submit" value="Выбрать"></p>
+    <form class="check-form" id="check-track-status-form" action="">
+        <p class="is_fin"><input id="check-track-radio1" name="is_fin" type="radio" value="true" {{ is_fin.fin }}> Прошедшие</p>
+        <p class="is_fin"><input id="check-track-radio2" name="is_fin" type="radio" value="false" {{ is_fin.plan }}> Запланированные</p>
     </form>
     <div class="track-item-container">
 
@@ -128,5 +124,14 @@
     </article>
     {% endfor %}
     {{ dump(is_fin) }}
+    <script type="application/javascript">
+        document.getElementById('check-track-radio1').onclick = function(){
+            document.getElementById('check-track-status-form').submit();
+        };
+        document.getElementById('check-track-radio2').onclick = function(){
+            document.getElementById('check-track-status-form').submit();
+        };
+
+    </script>
 {% endblock %}
 
