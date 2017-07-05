@@ -123,8 +123,10 @@
                             <a class="link-track-item" href="{{ path('single_track', {'track_id' : track.track_id}) }}">{{ track.track }}</a>
                         </div>
                         <div class="field field-members">
-                           <a href="#">учасник2</a>
-                           <a href="#">учасник2</a>
+                            {% set current_track_id = track.track_id %}
+                            {% for member in members[current_track_id] %}
+                                <a href="{{ path('single_member', {'member_id' : member.0.member_id}) }}">{{ member.0.name  }}</a>
+                            {% endfor %}
                         </div>
 
 
@@ -136,7 +138,7 @@
 
     </article>
     {% endfor %}
-    {{ dump(is_fin) }}
+    {{ dump(members) }}
     <script type="application/javascript">
         document.getElementById('check-track-radio1').onclick = function(){
             document.getElementById('check-track-status-form').submit();

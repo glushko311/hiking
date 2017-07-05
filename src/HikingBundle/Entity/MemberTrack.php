@@ -33,7 +33,7 @@ class MemberTrack
     /**
      * @ORM\Column(type="integer")
      */
-    public $memberId;
+    private $memberId;
 
     /**
      * Get memberTrackId

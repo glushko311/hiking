@@ -17,15 +17,40 @@ class HikingController extends Controller
         $em = $this->getDoctrine();
         $trackRepository = $em->getRepository("HikingBundle:Track");
         $is_fin = ['fin' => 'checked', 'plan' => ''];
-        
+
         if(isset($_GET['is_fin']) && !empty($_GET['is_fin'] && $_GET['is_fin'] == 'false')){
             $tracks = $trackRepository->findBy(["status"=>1]);
             $is_fin = ['fin' => '', 'plan' => 'checked'];
         }else{
             $tracks = $trackRepository->findBy(["status"=>0]);
         }
-        
-        return $this->render("HikingBundle:Track:all_tracks.html.twig", ['tracks' => $tracks, 'is_fin' => $is_fin]);
+
+        $members = [];
+
+        foreach($tracks as $track){
+            $trackId = $track->getTrack_id();
+
+            $memberTrackRepository = $em->getRepository("HikingBundle:MemberTrack");
+            $memberTracks = $memberTrackRepository->findBy(['track_Id' => $trackId]);
+            $memberToTrack = [];
+            foreach ($memberTracks as $memberTrack){
+
+                $memberId = $memberTrack->getMemberId();
+
+                $memberRepository = $em->getRepository("HikingBundle:Member");
+                $member = $memberRepository->findBy(['member_id' => $memberId]);
+
+                $memberToTrack[] = $member;
+            }
+
+
+            $members[$trackId] = $memberToTrack;
+        }
+
+        return $this->render("HikingBundle:Track:all_tracks.html.twig", ['tracks' => $tracks, 
+                                                                         'is_fin' => $is_fin,
+                                                                         'members' => $members               
+                                                                         ]);
     }
    
     public function showSingleTrackAction($track_id){
@@ -41,7 +66,7 @@ class HikingController extends Controller
         $memberTracks = $memberTrackRepository->findBy(['track_Id' => $track_id]);
         $members = [];
         foreach ($memberTracks as $memberTrack){
-           $memberId = $memberTrack->memberId;
+           $memberId = $memberTrack->getMemberId();
 
             $memberRepository = $em->getRepository("HikingBundle:Member");
             $member = $memberRepository -> findBy(['member_id' => $memberId]);
