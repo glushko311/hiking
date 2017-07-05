@@ -29,7 +29,14 @@ class HikingController extends Controller
     public function showSingleTrackAction($track_id){
         $em = $this->getDoctrine();
         $trackRepository = $em->getRepository("HikingBundle:Track");
-        $track =$trackRepository->find($track_id);
+        $track = $trackRepository->find($track_id);
         return $this->render("HikingBundle:Track:single_track.html.twig", ['track' => $track]);
+    }
+    
+    public function showSingleMemberAction($member_id){
+        $em = $this->getDoctrine();
+        $memberRepository = $em->getRepository("HikingBundle:Member");
+        $member = $memberRepository->find($member_id);
+        return $this->render("HikingBundle:Member:single_member.html.twig", ['member' => $member]);
     }
 }
