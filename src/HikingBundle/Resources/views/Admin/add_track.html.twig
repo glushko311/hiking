@@ -1,0 +1,78 @@
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+    <style>
+        h1{
+            text-align: center;
+        }
+        #form-add-track{
+            display:flex;
+            align-items: center;
+            justify-content: space-around;
+            font-family: Arial sans-serif;
+
+        }
+        .num-input-container{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+        }
+        .field-add-track{
+            width: 15vw;
+            font-size: 1.5vw;
+            height: 2vw;
+            text-align: center;
+            margin-top: 1vw;
+        }
+        .field-add-track:first-child{
+            margin-top: 0;
+        }
+        .area-add-track{
+            font-size: 2vw;
+        }
+        .radio-block-add-track{
+            font-size: 1.5vw;
+        }
+        .radio-block-add-track p{
+            width:16vw;
+        }
+        .radio-block-add-track .row-radio{
+            display:flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="page_title" id="page_title">
+    <h1> Добавить новый маршрут </h1>
+</div>
+    <form  method="post" action="" class="check-form" id="form-add-track">
+        <div class="num-input-container">
+            <input class="field-add-track" type="date" name="date" required placeholder="Дата старта">
+            <input class="field-add-track" type="number" name="days" required placeholder="Дней в пути">
+            <input class="field-add-track" type="number" name="difficult" required placeholder="Сложность">
+        </div>
+        <textarea class="area-add-track" name="track" id="" rows="4" cols="40"  placeholder="Нитка маршрута"></textarea>
+        <div class="radio-block-add-track">
+            <div class="row-radio">
+                <p>Маршрут завершен </p>
+                <input name="is_fin" type="radio" checked>
+            </div>
+            <div class="row-radio">
+                <p>Маршрут планируется </p>
+                <input name="is_fin" type="radio">
+            </div>
+            <button class="submit-add-track" type="submit">Добавить маршрут</button>
+        </div>
+
+
+    </form>
+
+
+{% endblock %}
+
