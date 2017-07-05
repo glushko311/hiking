@@ -28,12 +28,12 @@ class MemberTrack
     /**
      * @ORM\Column(type="integer")
      */
-    private $trackId;
+    private $track_Id;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $memberId;
+    public $memberId;
 
     /**
      * Get memberTrackId
@@ -52,9 +52,9 @@ class MemberTrack
      *
      * @return MemberTrack
      */
-    public function setTrackId($trackId)
+    public function setTrack_Id($trackId)
     {
-        $this->trackId = $trackId;
+        $this->track_id = $trackId;
 
         return $this;
     }
@@ -64,9 +64,9 @@ class MemberTrack
      *
      * @return integer
      */
-    public function getTrackId()
+    public function getTrack_Id()
     {
-        return $this->trackId;
+        return $this->track_Id;
     }
 
     /**

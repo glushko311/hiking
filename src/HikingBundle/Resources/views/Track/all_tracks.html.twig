@@ -40,7 +40,7 @@
             border-right:0;
         }
         .track-item-container .field-track{
-            width:70vw;
+            width:58vw;
             text-align: left;
             padding-left: 2vw;
             justify-content: flex-start;
@@ -50,6 +50,12 @@
         }
         .track-item-container .field-difficult{
             width:11vw;
+
+        }
+        .track-item-container .field-members{
+            width:12vw;
+            flex-direction: column;
+            font-size: 1.2vw;
 
         }
         .check-form{
@@ -88,6 +94,9 @@
         <div class="field field-track">
             <p>Нитка маршрута</p>
         </div>
+        <div class="field field-members">
+            <p>Участники</p>
+        </div>
     </div>
     {% for track in tracks %}
     <article>
@@ -112,6 +121,10 @@
 
                         <div class="field field-track">
                             <a class="link-track-item" href="{{ path('single_track', {'track_id' : track.track_id}) }}">{{ track.track }}</a>
+                        </div>
+                        <div class="field field-members">
+                           <a href="#">учасник2</a>
+                           <a href="#">учасник2</a>
                         </div>
 
 

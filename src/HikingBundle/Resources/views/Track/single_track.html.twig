@@ -26,9 +26,13 @@
         <p>{{ track.track }}</p>
         <p>Сложность маршрута(субъективно): {{ track.difficult }} </p>
         <p>Дней в пути: {{ track.days }}</p>
-        <p>Участники: </p>
+        <p>Участники:
+            {% for member in members %}
+                <a href="{{ path('single_member', {'member_id' : member.0.member_id}) }}">{{ member.0.name }}</a>
+            {% endfor %}
+        </p>
     </div>
 </article>
-
+{{ dump(members) }}
 {% endblock %}
 
