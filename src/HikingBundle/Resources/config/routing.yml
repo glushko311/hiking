@@ -20,4 +20,4 @@ single_track:
   path: /track/{track_id}
   defaults: { _controller: HikingBundle:Hiking:showSingleTrack }
   requirements:
-    id: \d+
+    track_id: \d+

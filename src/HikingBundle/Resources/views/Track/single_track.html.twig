@@ -5,6 +5,12 @@
         h1{
             text-align: center;
         }
+        .track-container p{
+            font-size: 2vw;
+            padding:1vw;
+            font-weight: 800;
+            font-family: Arial sans-serif;
+        }
 
     </style>
 {% endblock %}
@@ -13,7 +19,16 @@
 <div class="page_title" id="page_title">
     <h1> Страница маршрута </h1>
 </div>
+<article>
+    <div class="container track-container">
+        <p>Дата старта маршрута {{ track.date|date("d-m-Y") }}</p>
+        <p>Нитка маршрута:</p>
+        <p>{{ track.track }}</p>
+        <p>Сложность маршрута(субъективно): {{ track.difficult }} </p>
+        <p>Дней в пути: {{ track.days }}</p>
+        <p>Участники: </p>
+    </div>
+</article>
 
-    {{ dump(track) }}
 {% endblock %}
 
