@@ -54,11 +54,7 @@ class Track
      */
     private $status;
 
-
-
     
-
-
 
 
 
@@ -67,7 +63,7 @@ class Track
      *
      * @return integer
      */
-    public function getTrackId()
+    public function getTrack_id()
     {
         return $this->track_id;
     }
@@ -168,11 +164,10 @@ class Track
         return $this->track;
     }
 
-
     /**
-     * Set days
+     * Set status
      *
-     * @param integer $status
+     * @param boolean $status
      *
      * @return Track
      */
@@ -192,6 +187,4 @@ class Track
     {
         return $this->status;
     }
-
-
 }
