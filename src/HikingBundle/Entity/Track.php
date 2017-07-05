@@ -13,7 +13,7 @@ namespace HikingBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Class Blog
+ * Class Track
  * @package HikingBundle\Entity
  * @ORM\Table(name="t_track")
  * @ORM\Entity

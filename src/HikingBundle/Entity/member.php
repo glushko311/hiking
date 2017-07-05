@@ -10,7 +10,7 @@ namespace HikingBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Class member
+ * Class Member
  * @package HikingBundle\Entity
  * @ORM\Table(name="t_member")
  * @ORM\Entity

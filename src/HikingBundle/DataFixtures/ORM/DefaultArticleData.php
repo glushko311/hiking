@@ -97,16 +97,16 @@ class DefaultArticleData implements FixtureInterface
 
         $member=new Member();
         $member->setName("Михаил");
-        $member->setLastName('Иванов');
+        $member->setLastName('Страшок');
         $member->setAbout('Спокойный и уравновешенный иногда даже слишком. Не общительный. Проблем от него 
         нет, но и толку в общем то тоже идеальный участник похода');
         $manager->persist($member);
 
         $member=new Member();
         $member->setName("Анна");
-        $member->setLastName('Петрова');
+        $member->setLastName('Каган');
         $member->setAbout('Спокойная, уравновешенная бывшая девушка Михаила. Не общительная. 
-        Они с Михаилом очень похожи в походе их совершенно не заметно');
+        Они с Михаилом очень похожи в походе их совершенно не заметно. Любит котиков.');
         $manager->persist($member);
 
         $member=new Member();
