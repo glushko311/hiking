@@ -30,6 +30,9 @@ class HikingController extends Controller
         $em = $this->getDoctrine();
         $trackRepository = $em->getRepository("HikingBundle:Track");
         $track = $trackRepository->find($track_id);
+        if(empty($track)){
+            return $this->render("HikingBundle:Track:track404.html.twig");
+        }
         return $this->render("HikingBundle:Track:single_track.html.twig", ['track' => $track]);
     }
     
@@ -37,6 +40,9 @@ class HikingController extends Controller
         $em = $this->getDoctrine();
         $memberRepository = $em->getRepository("HikingBundle:Member");
         $member = $memberRepository->find($member_id);
+        if(empty($member)){
+            return $this->render("HikingBundle:Member:member404.html.twig");
+        }
         return $this->render("HikingBundle:Member:single_member.html.twig", ['member' => $member]);
     }
 }
