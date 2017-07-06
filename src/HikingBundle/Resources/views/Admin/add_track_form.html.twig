@@ -1,0 +1,36 @@
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+    <style>
+        h1{
+            text-align: center;
+        }
+        form{
+            width: 60vw;
+            background: #666666;
+            margin: 0 auto;
+            padding: 2vw;
+        }
+        textarea{
+            resize:none;
+        }
+        form div{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #form{
+            flex-direction: column;
+        }
+
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="page_title" id="page_title">
+    <h1> Добавить новый маршрут </h1>
+</div>
+{{ form(form_add_blog) }}
+    {{ dump(form_add_blog) }}
+{% endblock %}
+

@@ -19,6 +19,6 @@ single_member:
     member_id: \d+
 
 add_track:
-  path: /add_track
-  defaults: { _controller: HikingBundle:AdminHiking:showAddTrackForm }
+  path: /admin/add_track
+  defaults: { _controller: HikingBundle:AdminHiking:addTrackForm }
 

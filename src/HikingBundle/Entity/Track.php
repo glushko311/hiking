@@ -11,6 +11,7 @@
 namespace HikingBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+//use Symfony\Component\Validator as Assert;
 
 /**
  * Class Track
