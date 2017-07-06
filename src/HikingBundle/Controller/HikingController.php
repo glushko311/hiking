@@ -19,10 +19,10 @@ class HikingController extends Controller
         $is_fin = ['fin' => 'checked', 'plan' => ''];
 
         if(isset($_GET['is_fin']) && !empty($_GET['is_fin'] && $_GET['is_fin'] == 'false')){
-            $tracks = $trackRepository->findBy(["status"=>1]);
+            $tracks = $trackRepository->findBy(["status"=>0]);
             $is_fin = ['fin' => '', 'plan' => 'checked'];
         }else{
-            $tracks = $trackRepository->findBy(["status"=>0]);
+            $tracks = $trackRepository->findBy(["status"=>1]);
         }
 
         $members = [];

@@ -22,3 +22,12 @@ add_track:
   path: /admin/add_track
   defaults: { _controller: HikingBundle:AdminHiking:addTrackForm }
 
+add_member:
+  path: /admin/add_member
+  defaults: { _controller:HikingBundle:AdminHiking:addMemberForm }
+
+add_members_to_track:
+  path: /admin/add_members/{track_id}
+  defaults: { _controller:HikingBundle:AdminHiking:addMembersToTrack }
+  requirements:
+    member_id: \d+

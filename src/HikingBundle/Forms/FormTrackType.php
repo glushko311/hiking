@@ -18,14 +18,14 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class FormType extends AbstractType
+class FormTrackType extends AbstractType
 {
     public function buildForm( FormBuilderInterface $builder, array $options){
         $builder->add('date', DateType::class,['label'=>'Дата старта', 'attr'=> ['class'=>'form-field track-date-field']])
             ->add('days', IntegerType::class, ['label'=>'Дней в пути', 'attr'=> ['class'=>'form-field track-days-field']])
             ->add('difficult', IntegerType::class, ['label'=>'Сложность','attr'=> ['class'=>'form-field track-difficult-field']])
             ->add('track', TextareaType::class, ['label'=>'Нитка маршрута', 'attr'=> ['class'=>'form-field track-track-field']])
-            ->add('status', CheckboxType::class, ['label'=>'Маршрут пройден ?', 'attr'=> ['class'=>'form-field track-status-field']] )
+            ->add('status', CheckboxType::class, ['label'=>'Маршрут пройден ?', 'attr'=> ["required"=>"none",'class'=>'form-field track-status-field']] )
             ->add('save', SubmitType::class, ['label'=>'Сохранить маршрут', 'attr'=> ['class'=>'submit-btn track-submit-btn']]);
     }
 

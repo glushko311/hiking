@@ -23,7 +23,7 @@
             margin-top:10px
         }
         label{
-           width: 150px;
+            width: 150px;
         }
         form>div{
             flex-direction: column;
@@ -37,10 +37,10 @@
 {% endblock %}
 
 {% block body %}
-<div class="page_title" id="page_title">
-    <h1> Добавить новый маршрут</h1>
-</div>
-{{ form(form_add_track) }}
+    <div class="page_title" id="page_title">
+        <h1> Добавить нового учасника </h1>
+    </div>
+    {{ form(form_add_member) }}
     {#{{ dump(form_add_blog) }}#}
 {% endblock %}
 
