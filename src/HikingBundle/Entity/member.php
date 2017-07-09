@@ -17,6 +17,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Member
 {
+    
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id

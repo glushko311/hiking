@@ -1,41 +1,5 @@
 {% extends "::base.html.twig" %}
 
-{% block stylesheets %}
-    <style>
-        h1{
-            text-align: center;
-        }
-        form{
-            width: 60vw;
-            min-width: 400px;
-            background: #666666;
-            margin: 0 auto;
-            padding: 2vw;
-        }
-        textarea{
-            resize:none;
-            height: 150px;
-        }
-        form div{
-            display:flex;
-            justify-content: center;
-            align-items: center;
-            margin-top:10px
-        }
-        label{
-            width: 150px;
-        }
-        form>div{
-            flex-direction: column;
-            margin:0;
-        }
-        .form-field{
-            width: 250px;
-        }
-
-    </style>
-{% endblock %}
-
 {% block body %}
     <div class="page_title" id="page_title">
         <h1> Добавить нового учасника </h1>
