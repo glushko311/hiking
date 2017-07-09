@@ -8,7 +8,6 @@
 
 namespace HikingBundle\Controller;
 
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class HikingController extends Controller
@@ -73,7 +72,6 @@ class HikingController extends Controller
 
             $members[]= $member;
         }
-
 
         return $this->render("HikingBundle:Track:single_track.html.twig", ['track' => $track, 
                                                                            'members'=>$members ]);

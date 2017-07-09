@@ -69,6 +69,11 @@ class MemberTrack
         return $this->track_Id;
     }
 
+    public function getTrackId()
+    {
+        return $this->track_Id;
+    }
+
     /**
      * Set memberId
      *

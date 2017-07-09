@@ -5,6 +5,12 @@
         h1{
             text-align: center;
         }
+        .add-new-member-link{
+            width:300px;
+            margin: 0 auto;
+            text-align: center;
+            display: block;
+        }
         form{
             width: 60vw;
             min-width: 400px;
@@ -40,7 +46,9 @@
     <div class="page_title" id="page_title">
         <h1> Добавить учасников в маршрут </h1>
     </div>
-    {{ form(membersToTrack) }}
+    {{ form(member_to_track) }}
+    <a class="add-new-member-link" href="{{ path('add_member') }}">Добавить нового участнику в базу</a>
+
     {#{{ dump(members) }}#}
 {#{% endblock %}#}
 
