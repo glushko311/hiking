@@ -3,6 +3,7 @@ body{
 }
 h1{
     text-align: center;
+    font-size: 4vw;
 }
 .link-track-item{
     text-decoration: none;
@@ -151,8 +152,12 @@ form>div{
     margin:0;
 }
 .form-field{
-    width: 250px;
+    width: 30vw;
 }
 .check-form{
     background: #fff;
+    font-size: 2.3vw;
+}
+.add-track-btn{
+    font-size: 2vw;
 }
