@@ -75,8 +75,8 @@ class AdminHikingController extends Controller
 
         if ($form->isSubmitted()){
             $task = $form->getData();
-            echo "<h1>77777777</h1>";
-            var_dump($task);
+//            echo "<h1>77777777</h1>";
+//            var_dump($task);
 
         }
 
